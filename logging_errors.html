@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Console/Error</title></head>
+<body>
+  <h2>Error Logging Differences</h2>
+  <script>
+    detectAdblock(adblock => {
+      if (adblock) {
+        console.error("Adblock error simulation");
+        throw new Error("Intentional Error");
+      }
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

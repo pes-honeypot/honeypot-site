@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Loading Delay</title></head>
+<body>
+  <h2>Loading with Delay</h2>
+  <div id="load">Loading...</div>
+  <script>
+    detectAdblock(adblock => {
+      const delay = adblock ? 4000 : 1000;
+      setTimeout(() => {
+        document.getElementById('load').innerText = "Loaded.";
+      }, delay);
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

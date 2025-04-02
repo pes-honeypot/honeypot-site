@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>API Difference</title></head>
+<body>
+  <h2>API Call Changes</h2>
+  <script>
+    detectAdblock(adblock => {
+      const url = adblock ? '/api/limited' : '/api/full';
+      fetch(url).then(r => r.text()).then(console.log);
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

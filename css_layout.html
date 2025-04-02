@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Layout</title>
+  <style>.hide { display: none; }</style>
+</head>
+<body>
+  <h2>CSS/Layout Differences</h2>
+  <div id="premium">Premium Feature</div>
+  <script>
+    detectAdblock(adblock => {
+      if (adblock) document.getElementById('premium').classList.add('hide');
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

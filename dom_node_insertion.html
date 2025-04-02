@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>DOM Node Insertion</title></head>
+<body>
+  <h2>DOM Node Injection</h2>
+  <div id="injection"></div>
+  <script>
+    detectAdblock(adblock => {
+      if (adblock) {
+        const node = document.createElement('div');
+        node.innerText = 'Adblock-only node added.';
+        document.getElementById('injection').appendChild(node);
+      }
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

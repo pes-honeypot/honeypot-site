@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Cookie/Storage</title></head>
+<body>
+  <h2>Cookie/LocalStorage Variation</h2>
+  <script>
+    detectAdblock(adblock => {
+      localStorage.setItem('user-type', adblock ? 'adblock-user' : 'regular-user');
+      console.log("User type set:", localStorage.getItem('user-type'));
+    });
+  </script>
+  <script src="common.js"></script>
+</body></html>

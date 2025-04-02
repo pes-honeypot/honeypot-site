@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Conditional JS</title></head>
+<body>
+  <h2>Conditional JS Logic</h2>
+  <button onclick="runAction()">Click Me</button>
+  <script>
+    let adblockDetected = false;
+    function runAction() {
+      alert(adblockDetected ? "Adblocker detected. Limited access." : "Thanks for clicking!");
+    }
+    detectAdblock(ab => adblockDetected = ab);
+  </script>
+  <script src="common.js"></script>
+</body></html>
