@@ -5,6 +5,7 @@
 <body>
   <h2>Dynamic Content Based on Adblock</h2>
   <div id="content"></div>
+  <script src="common.js"></script>
   <script>
     detectAdblock(adblock => {
       document.getElementById('content').innerText = adblock ?
@@ -12,5 +13,5 @@
         "Welcome to our full content experience!";
     });
   </script>
-  <script src="common.js"></script>
+  
 </body></html>
