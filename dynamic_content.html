@@ -2,15 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><title>Dynamic Content</title></head>
+
 <body>
   <h2>Dynamic Content Based on Adblock</h2>
   <div id="content"></div>
   <script src="common.js"></script>
   <script>
     detectAdblock(adblock => {
+      console.log(adblock);
       document.getElementById('content').innerText = adblock ?
         "Please disable your adblocker to access full content." :
-        "Welcome to our full content experience!";
+        "Welcome to our full content experience!!";
     });
   </script>
   <!-- <script src="common.js"></script> -->
