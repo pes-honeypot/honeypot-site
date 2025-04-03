@@ -7,10 +7,11 @@
 <body>
   <h2>CSS/Layout Differences</h2>
   <div id="premium">Premium Feature</div>
+  <script src="common.js"></script>
   <script>
     detectAdblock(adblock => {
       if (adblock) document.getElementById('premium').classList.add('hide');
     });
   </script>
-  <script src="common.js"></script>
+  
 </body></html>

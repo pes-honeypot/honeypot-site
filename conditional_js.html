@@ -4,6 +4,8 @@
 <body>
   <h2>Conditional JS Logic</h2>
   <button onclick="runAction()">Click Me</button>
+  
+  <script src="common.js"></script>
   <script>
     let adblockDetected = false;
     function runAction() {
@@ -11,5 +13,5 @@
     }
     detectAdblock(ab => adblockDetected = ab);
   </script>
-  <script src="common.js"></script>
+  
 </body></html>
