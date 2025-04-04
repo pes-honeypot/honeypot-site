@@ -6,7 +6,7 @@
   <script src="common.js"></script>
   <script>
     detectAdblock(adblock => {
-      const url = adblock ? '/api/limited' : '/api/full';
+      const url = adblock ? 'api/limited' : 'api/full';
       fetch(url).then(r => r.text()).then(console.log);
     });
   </script>
