@@ -3,15 +3,11 @@
 <head><title>Conditional JS</title></head>
 <body>
   <h2>Conditional JS Logic</h2>
-  <button onclick="runAction()">Click Me</button>
-  
   <script src="common.js"></script>
   <script>
-    let adblockDetected = false;
-    function runAction() {
-      alert(adblockDetected ? "Adblocker detected. Limited access." : "Thanks for clicking!");
-    }
-    detectAdblock(ab => adblockDetected = ab);
+    detectAdblock(adblock => {
+      alert(adblock ? "Adblocker detected. Limited access." : "No adblocker detected.");
+    });
   </script>
-  
-</body></html>
+</body>
+</html>

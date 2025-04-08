@@ -7,7 +7,7 @@
   <script>
     detectAdblock(adblock => {
       if (adblock) {
-        // console.error("Adblock error simulation");
+        console.log("Adblock error simulation");
         throw new Error("Intentional Error");
       }
     });

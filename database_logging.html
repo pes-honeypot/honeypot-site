@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Database Error Logging</title></head>
+<body>
+  <h2>Database Error Logging</h2>
+  <script src="common.js"></script>
+  <script>
+    // Mock database logging function
+    function logToDatabase(errorData) {
+      // This would be replaced with actual API endpoint
+      const mockEndpoint = 'https://127.0.0.1:8080';
+      
+      // Create a mock request
+      const request = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          error: errorData,
+          userAgent: navigator.userAgent,
+          url: window.location.href
+        })
+      };
+
+      // Simulate sending to server
+      console.log('Logging to database:', request.body);
+      
+      // In a real implementation, this would be:
+      // fetch(mockEndpoint, request)
+      //   .then(response => response.json())
+      //   .then(data => console.log('Logged successfully:', data))
+      //   .catch(error => console.error('Logging failed:', error));
+    }
+
+    // Error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      logToDatabase({
+        message,
+        source,
+        lineno,
+        colno,
+        stack: error?.stack
+      });
+      return false; // Prevent default error handling
+    };
+
+    // Adblock detection with error logging
+    detectAdblock(adblock => {
+      if (adblock) {
+        const error = new Error('Adblock detected - security violation');
+        error.type = 'ADBLOCK_VIOLATION';
+        logToDatabase({
+          message: error.message,
+          type: error.type,
+          stack: error.stack
+        });
+        throw error;
+      }
+    });
+  </script>
+  <!-- <script src="common.js"></script> -->
+</body></html>

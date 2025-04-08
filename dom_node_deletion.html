@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>DOM Node Deletion</title></head>
+<body>
+  <h2>DOM Node Deletion</h2>
+  <div id="target">This node will be deleted if adblock is detected</div>
+  <script src="common.js"></script>
+  <script>
+    detectAdblock(adblock => {
+      if (adblock) {
+        const node = document.getElementById('target');
+        node.remove();
+      }
+    });
+  </script>
+</body>
+</html>
