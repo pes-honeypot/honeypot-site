@@ -9,7 +9,6 @@
   <script src="common.js"></script>
   <script>
     detectAdblock(adblock => {
-      console.log(adblock);
       document.getElementById('content').innerText = adblock ?
         "Please disable your adblocker to access full content." :
         "Welcome to our full content experience!!";
